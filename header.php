@@ -48,10 +48,61 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
+			<?php if( is_front_page() ) : ?>
+				<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+					<?php
+						$image = get_field('full_width_image');
 
+						if( !empty($image) ):
+							// vars
+							$url = $image['url'];
+							$title = $image['title'];
+							$alt = $image['alt'];
+
+							// thumbnail
+							$size = 'header-image';
+							$thumb = $image['sizes'][ $size ]; ?>
+					<?php if(get_field('number_of_images') == 'single' ) : ?>
+					<div id="inner-header" class="wrap row" style="background: url('<?php echo $thumb; ?>');">
+
+
+
+
+								  	hey
+
+
+								<?php endif; ?>
+
+						<?php else : ?>
+							two
+						<?php endif; ?>
+
+
+					</div>
+					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<?php wp_nav_menu(array(
+											 'container' => false,                           // remove nav container
+											 'container_class' => 'menu ',                 // class of container (should you choose to use it)
+											 'menu' => __( 'The Main Menu', 'kathrynandjoe' ),  // nav name
+											 'menu_class' => 'nav top-nav ',               // adding custom nav class
+											 'theme_location' => 'main-nav',                 // where it's located in the theme
+											 'before' => '',                                 // before the menu
+														 'after' => '',                                  // after the menu
+														 'link_before' => '',                            // before each link
+														 'link_after' => '',                             // after each link
+														 'depth' => 0,                                   // limit the depth of the nav
+											 'fallback_cb' => ''                             // fallback function (if there is one)
+						)); ?>
+
+					</nav>
+					<div id="mobile-nav">
+						Menu <i class="fas fa-chevron-down"></i>
+					</div>
+				</header>
+			<?php else : ?>
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div id="inner-header" class="wrap  row">
+				<div id="inner-header" class="wrap row">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 
@@ -65,7 +116,7 @@
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu ',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'startertheme' ),  // nav name
+    					         'menu' => __( 'The Main Menu', 'kathrynandjoe' ),  // nav name
     					         'menu_class' => 'nav top-nav ',               // adding custom nav class
     					         'theme_location' => 'main-nav',                 // where it's located in the theme
     					         'before' => '',                                 // before the menu
@@ -82,3 +133,4 @@
 					</div>
 				</div>
 			</header>
+			<?php endif; ?>

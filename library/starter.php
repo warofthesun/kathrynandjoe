@@ -191,8 +191,8 @@ function starter_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'startertheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'startertheme' ) // secondary nav in footer
+			'main-nav' => __( 'The Main Menu', 'kathrynandjoe' ),   // main nav in header
+			'footer-links' => __( 'Footer Links', 'kathrynandjoe' ) // secondary nav in footer
 		)
 	);
 
@@ -230,7 +230,7 @@ function starter_related_posts() {
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'startertheme' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'kathrynandjoe' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_postdata();
@@ -275,7 +275,7 @@ function starter_filter_ptags_on_images($content){
 function starter_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'startertheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'startertheme' ) .'</a>';
+	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'kathrynandjoe' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'kathrynandjoe' ) .'</a>';
 }
 
 

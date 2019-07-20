@@ -3,7 +3,7 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap  row">
+				<div id="inner-content" class="wrap row">
 
 						<main id="main" class="col-xs-12 col-sm-8 col-lg-9 " role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -20,11 +20,11 @@
 
 									<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 									<p class="byline entry-meta vcard">
-										<?php printf( __( 'Posted', 'startertheme' ).' %1$s %2$s',
+										<?php printf( __( 'Posted', 'kathrynandjoe' ).' %1$s %2$s',
                   							     /* the time the post was published */
                   							     '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
                        								/* the author of the post */
-                       								'<span class="by">'.__('by', 'startertheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+                       								'<span class="by">'.__('by', 'kathrynandjoe').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
                     							); ?>
 									</p>
 
@@ -52,13 +52,13 @@
 
 									<article id="post-not-found" class="hentry ">
 										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'startertheme' ); ?></h1>
+											<h1><?php _e( 'Oops, Post Not Found!', 'kathrynandjoe' ); ?></h1>
 										</header>
 										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'startertheme' ); ?></p>
+											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'kathrynandjoe' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'startertheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the archive.php template.', 'kathrynandjoe' ); ?></p>
 										</footer>
 									</article>
 

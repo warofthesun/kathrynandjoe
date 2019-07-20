@@ -17,7 +17,7 @@ function starter_ahoy() {
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  load_theme_textdomain( 'startertheme', get_template_directory() . '/library/translation' );
+  load_theme_textdomain( 'kathrynandjoe', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
@@ -65,8 +65,7 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'starter-thumb-600', 600, 150, true );
-add_image_size( 'starter-thumb-300', 300, 100, true );
+add_image_size( 'header-image', 1040, 300, true );
 add_image_size( 'gallery-image', 680, 450, true );
 
 /*
@@ -94,8 +93,6 @@ add_filter( 'image_size_names_choose', 'starter_custom_image_sizes' );
 function starter_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'gallery-image' => __('Gallery Image'),
-        'starter-thumb-600' => __('600px by 150px'),
-        'starter-thumb-300' => __('300px by 100px'),
     ) );
 }
 
@@ -153,8 +150,8 @@ add_action( 'customize_register', 'starter_theme_customizer' );
 function starter_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'startertheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'startertheme' ),
+		'name' => __( 'Sidebar 1', 'kathrynandjoe' ),
+		'description' => __( 'The first (primary) sidebar.', 'kathrynandjoe' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -171,8 +168,8 @@ function starter_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'startertheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'startertheme' ),
+		'name' => __( 'Sidebar 2', 'kathrynandjoe' ),
+		'description' => __( 'The second (secondary) sidebar.', 'kathrynandjoe' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -271,13 +268,13 @@ function starter_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'startertheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'startertheme' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'startertheme' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'kathrynandjoe' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'kathrynandjoe' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'kathrynandjoe' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'startertheme' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'kathrynandjoe' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">

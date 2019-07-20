@@ -121,7 +121,7 @@ function my_theme_register_required_plugins() {
 	);
 
 	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'StarterTheme';
+	$theme_text_domain = 'kathrynandjoe';
 
 	/**
 	 * Array of configuration settings. Amend each line as needed.

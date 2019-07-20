@@ -191,6 +191,12 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
+.home {
+	.header {
+		background-color: transparent;
+	}
+}
+
 .header {
 	background-color: $primary;
 }

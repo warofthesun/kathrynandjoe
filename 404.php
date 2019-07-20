@@ -3,7 +3,7 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap  row">
+				<div id="inner-content" class="wrap row">
 
 					<main id="main" class="col-xs-12 col-sm-8 col-lg-9 " role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -11,13 +11,13 @@
 
 							<header class="article-header">
 
-								<h1><?php _e( '404 - Article Not Found', 'startertheme' ); ?></h1>
+								<h1><?php _e( '404 - Article Not Found', 'kathrynandjoe' ); ?></h1>
 
 							</header>
 
 							<section class="entry-content">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'startertheme' ); ?></p>
+								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'kathrynandjoe' ); ?></p>
 
 							</section>
 
@@ -29,7 +29,7 @@
 
 							<footer class="article-footer">
 
-									<p><?php _e( 'This is the 404.php template.', 'startertheme' ); ?></p>
+									<p><?php _e( 'This is the 404.php template.', 'kathrynandjoe' ); ?></p>
 
 							</footer>
 
