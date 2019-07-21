@@ -50,34 +50,62 @@
 		<div id="container">
 			<?php if( is_front_page() ) : ?>
 				<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-					<?php
-						$image = get_field('full_width_image');
 
-						if( !empty($image) ):
-							// vars
-							$url = $image['url'];
-							$title = $image['title'];
-							$alt = $image['alt'];
+							<div id="inner-header" class="wrap row">
+								<div class="header__container">
+								<?php
+									$image = get_field('full_width_image');
 
-							// thumbnail
-							$size = 'header-image';
-							$thumb = $image['sizes'][ $size ]; ?>
-					<?php if(get_field('number_of_images') == 'single' ) : ?>
-					<div id="inner-header" class="wrap row" style="background: url('<?php echo $thumb; ?>');">
+									if( !empty($image) ):
+										// vars
+										$url = $image['url'];
+										$title = $image['title'];
+										$alt = $image['alt'];
 
+										// thumbnail
+										$size = 'header-image';
+										$thumb = $image['sizes'][ $size ]; ?>
+								<?php if(get_field('number_of_images') == 'single' ) : ?>
+									<div class="header__container header__container-single_image" style="background: url('<?php echo $thumb; ?>');"></div>
+								<?php else : ?>
+									<div class="header__container header__container-double_image">
+										<?php
+											$image = get_field('image_left');
 
+											if( !empty($image) ):
+												// vars
+												$url = $image['url'];
+												$title = $image['title'];
+												$alt = $image['alt'];
 
+												// thumbnail
+												$size = 'large';
+												$thumb = $image['sizes'][ $size ]; ?>
+		 							 <div class="header__container-double_image-left" style="background: url('<?php echo $thumb; ?>');"></div>
+								 		<?php endif; ?>
+										<?php
+											$image = get_field('image_right');
 
-								  	hey
+											if( !empty($image) ):
+												// vars
+												$url = $image['url'];
+												$title = $image['title'];
+												$alt = $image['alt'];
 
-
-								<?php endif; ?>
-
-						<?php else : ?>
-							two
-						<?php endif; ?>
-
-
+												// thumbnail
+												$size = 'header-image';
+												$thumb = $image['sizes'][ $size ]; ?>
+									 <div class="header__container-double_image-right"style="background: url('<?php echo $thumb; ?>');"></div>
+								 <?php endif; ?>
+		 						 </div>
+								<?php endif; endif; ?>
+								<div class="header-content">
+									<div class="background-image"></div>
+									<div class="date"><?php the_field('date'); ?></div>
+									<div class="title"><?php the_field('title'); ?></div>
+									<div class="location"><?php the_field('location'); ?></div>
+								</div>
+								</div>
 					</div>
 					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<?php wp_nav_menu(array(

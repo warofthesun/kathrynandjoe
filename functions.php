@@ -65,7 +65,7 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'header-image', 1040, 300, true );
+add_image_size( 'header-image', 1440, 600, true );
 add_image_size( 'gallery-image', 680, 450, true );
 
 /*

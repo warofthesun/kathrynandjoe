@@ -85,12 +85,12 @@ DESKTOP
 /*********************
 LARGE VIEWING SIZE
 *********************/
-//@media only screen and (min-width: 1240px) {
+@media only screen and (min-width: 1240px) {
 
 	// styles in 1240up.scss
-	// @import "breakpoints/1240up";
+	@import "breakpoints/1240up";
 
-// } // end of media query
+ } // end of media query
 
 
 /*********************

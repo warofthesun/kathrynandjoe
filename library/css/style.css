@@ -1841,6 +1841,108 @@ HEADER STYLES
 *********************/
 .home .header {
   background-color: transparent; }
+  .home .header__container {
+    height: 600px;
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%; }
+    .home .header__container-double_image {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      height: 600px; }
+      .home .header__container-double_image-left {
+        width: 60%;
+        position: absolute;
+        z-index: 50;
+        height: 600px;
+        -webkit-clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
+                clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
+        background-position: center !important;
+        background-size: cover !important; }
+      .home .header__container-double_image-right {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        height: 600px;
+        background-position: center !important;
+        background-size: cover !important; }
+    .home .header__container .header-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      border-left: 1em solid #AED2C1;
+      border-right: 1em solid #AED2C1;
+      height: 100%;
+      background-color: rgba(174, 210, 193, 0.7);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(174, 210, 193, 0.5)), to(rgba(174, 210, 193, 0.7)));
+      background-image: linear-gradient(to bottom, rgba(174, 210, 193, 0.5), rgba(174, 210, 193, 0.7));
+      width: 30%;
+      position: absolute;
+      top: 0;
+      z-index: 60;
+      margin: 0 auto; }
+      .home .header__container .header-content .date,
+      .home .header__container .header-content .location {
+        color: #39696B;
+        position: relative;
+        z-index: 80; }
+      .home .header__container .header-content .date {
+        margin-top: -3em; }
+      .home .header__container .header-content .title {
+        color: #fff;
+        font-family: "Gravitas One", "Cursive", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 3em; }
+        .home .header__container .header-content .title p {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          line-height: 1;
+          margin: .5em; }
+          .home .header__container .header-content .title p .section__title:before, .home .header__container .header-content .title p .section__title:after {
+            background-color: #fff; }
+      .home .header__container .header-content .location {
+        font-size: 1.2em; }
+        .home .header__container .header-content .location span {
+          display: block;
+          font-size: .7em; }
+      .home .header__container .header-content .background-image {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-image: url("../images/bridge-illo-2.png");
+        background-repeat: no-repeat;
+        background-size: 280%;
+        background-position-x: center;
+        background-position-y: 400px;
+        opacity: .7; }
 
 .header {
   background-color: #AED2C1; }
@@ -1885,6 +1987,9 @@ and more scalable.
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   opacity: 0;
   display: none;
   height: 0;
@@ -1911,8 +2016,9 @@ and more scalable.
 		*/ }
     .nav li a {
       display: block;
-      color: #fff;
+      color: #2C3B41;
       text-decoration: none;
+      text-transform: uppercase;
       padding: 0.75em; }
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
@@ -2404,8 +2510,8 @@ NAVIGATION STYLES
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/ }
-        .nav li a:hover, .nav li a:focus {
-          color: #fff;
+        .nav li a:hover, .nav li a:focus, .nav li a:visited {
+          color: #7BAD96;
           text-decoration: underline; }
       .nav li ul.sub-menu,
       .nav li ul.children {
@@ -2495,6 +2601,20 @@ DESKTOP
 /*********************
 LARGE VIEWING SIZE
 *********************/
+@media only screen and (min-width: 1240px) {
+  /******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+  .wrap {
+    width: 1440px; } }
+
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make
