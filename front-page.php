@@ -8,13 +8,8 @@
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( ' single-post' ); ?> role="article">
-							this will be the content
-
-
-
-							</article>
+								
+							<?php include 'flexible-content.php'; ?>
 
 							<?php endwhile; ?>
 

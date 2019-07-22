@@ -1,3 +1,6 @@
+<div class="brush-one"></div>
+
+<div class="brush-three">three</div>
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div id="inner-footer" class="wrap row">
@@ -23,13 +26,13 @@
 				</div>
 
 			</footer>
-
+<div class="brush-two"></div>
 		</div>
 
 		<?php // all js scripts are loaded in library/starter.php ?>
 		<?php wp_footer(); ?>
 
-		
+
 
 	</body>
 

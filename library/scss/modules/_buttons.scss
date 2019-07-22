@@ -29,12 +29,10 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   position: relative;
   font-family: $sans-serif;
   text-decoration: none;
-  color: $white;
+  color: $white !important;
   font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
   font-weight: normal;
-  padding: 0 24px;
+  padding: .5em 1em;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
@@ -59,17 +57,33 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.accent-btn {
-  @extend %btn; // here we load the btn defaults
-  background-color: $accent;
+.primary-btn {
+  a {
+    @extend %btn; // here we load the btn defaults
+    background-color: $primary-md;
 
-  &:hover,
-  &:focus {
-    background-color: darken($accent, 4%);
-  } // end hover
+    &:hover,
+    &:focus {
+      background-color: darken($primary, 4%);
+    } // end hover
 
-  &:active {
-    background-color: darken($accent, 5%);
-  } // end active
+    &:active {
+      background-color: darken($primary, 5%);
+    } // end active
+  }
+}
 
-} // end blue button
+  .accent-btn {
+
+      @extend %btn; // here we load the btn defaults
+      background-color: $primary;
+
+      &:hover,
+      &:focus {
+        background-color: darken($primary, 4%);
+      } // end hover
+
+      &:active {
+        background-color: darken($primary, 5%);
+      } // end active
+  }

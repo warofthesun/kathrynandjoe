@@ -2,6 +2,11 @@
 GENERAL STYLES
 *********************/
 
+#container {
+	position: relative;
+	overflow: hidden;
+}
+
 body {
 	font-family: $serif;
 	font-size: 100%;
@@ -10,6 +15,44 @@ body {
 	background-color: $primary-lt;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+	background-image: url('../images/bridge-lower.png');
+	background-repeat: no-repeat;
+	background-size: 110%;
+	background-position-x: center;
+	background-position-y: bottom;
+	position: relative;
+	z-index: 10;
+}
+
+.brush-one {
+	background-image: url('../images/brush-one.png');
+	position: absolute;
+	width: 100%;
+	z-index: 11;
+	height: 290px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	bottom: 10px;
+}
+
+.brush-two {
+	background-image: url('../images/brush-two.png');
+	position: absolute;
+	width: 100%;
+	z-index: 9;
+	height: 500px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	bottom: -100px;
+}
+
+.bridge {
+	height: 300px;
+	width: 100%;
+	position: absolute;
+
 }
 
 img {
@@ -59,6 +102,101 @@ img {
 			left: 0.5em;
     	margin-right: -50%;
 		}
+	}
+}
+
+.content-section {
+	position: relative;
+	img {
+		width: 100%;
+		height: auto;
+
+		&.full-width {
+			border-top: .5em solid $primary-md;
+			border-bottom: .5em solid $primary-md;
+			display: block;
+		}
+	}
+
+	&__body {
+		padding: 2em;
+
+		&.background-color {
+			color: $white;
+
+			h2, .h2 {
+				color: $white;
+			}
+
+			.divider {
+
+				&:after {
+					content: "";
+					border-bottom: 2px solid $white;
+					width: 20%;
+					display: block;
+					margin: 1em auto;
+				}
+			}
+		}
+
+		.content {
+			margin: 0 auto;
+
+			&__single {
+				width: 60%;
+			}
+			&__double {
+				width: 80%;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			&__left,
+			&__right {
+				width: 49%;
+			}
+
+			.drop-size {
+				font-size: .9em;
+			}
+
+			ul {
+				list-style: circle;
+				margin: 1em 2em;
+
+				li {
+					margin-bottom: 1em;
+				}
+			}
+		}
+
+		h2, .h2 {
+			margin-bottom: 0;
+		}
+
+		h3, .h3 {
+			margin-top: 0;
+			display: block;
+
+			&:after {
+				content: "";
+				border-bottom: 2px solid $primary;
+				display: block;
+				width: 20%;
+				margin: 1em auto;
+			}
+		}
+
+		h6,
+		.h6 {
+			margin-top: 0;
+		}
+	}
+
+	.section-bottom-color {
+		width: 100%;
+		height: auto;
 	}
 }
 
@@ -169,10 +307,12 @@ h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
+	color: $primary-md-dk;
 }
 
 h3, .h3 {
 	font-size: 1.125em;
+	color: $primary-md-dk;
 }
 
 h4, .h4 {
@@ -187,6 +327,11 @@ h5, .h5 {
 	letter-spacing: 2px;
 }
 
+h6,
+.h6 {
+	font-size: .9em;
+}
+
 /*********************
 HEADER STYLES
 *********************/
@@ -196,7 +341,7 @@ HEADER STYLES
 		background-color: transparent;
 
 		&__container {
-			height: 600px;
+			height: 80vh;
 			position: relative;
 			text-align: center;
 			display: flex;
@@ -211,13 +356,13 @@ HEADER STYLES
 				position: relative;
 				width: 100%;
 				height: 100%;
-				height: 600px;
+				height: 80vh;
 
 				&-left {
 					width: 60%;
 					position: absolute;
 					z-index: 50;
-					height: 600px;
+					height: 80vh;
 					clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
 					background-position: center !important;
 					background-size: cover !important;
@@ -226,7 +371,7 @@ HEADER STYLES
 					width: 50%;
 					position: absolute;
 					right: 0;
-					height: 600px;
+					height: 80vh;
 					background-position: center !important;
 					background-size: cover !important;
 				}
@@ -288,12 +433,11 @@ HEADER STYLES
 					height: 100%;
 					width: 100%;
 					position: absolute;
-					background-image: url('../images/bridge-illo-2.png');
+					background-image: url('../images/bridge-illo.png');
 					background-repeat: no-repeat;
 					background-size: 280%;
 					background-position-x: center;
-					background-position-y: 400px;
-					opacity: .7;
+					background-position-y: 120%;
 				}
 			}
 		}
@@ -427,6 +571,8 @@ POSTS & CONTENT STYLES
 
 #content {
 	margin-top: 1.5em;
+	position: relative;
+	z-index: 50;
 }
 
 article {
@@ -441,7 +587,6 @@ article {
 }
 
 		.hentry {
-			background-color: $white;
 			border-radius: 3px;
 			margin-bottom: 1.5em;
 
@@ -1092,8 +1237,12 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
+	background-color: $primary;
 	color: $light-gray;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	z-index: 80;
 }
 
 	/*

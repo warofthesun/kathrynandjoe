@@ -32,7 +32,7 @@ body#tinymce.wp-editor {
 	@import "partials/mixins";
 
 	width: 731px;
-	font-family: $sans-serif;
+	font-family: $serif;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
@@ -68,6 +68,7 @@ body#tinymce.wp-editor {
 	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 		text-rendering: optimizelegibility;
 		font-weight: 500;
+		font-family: $sans-serif;
 		a {
 			text-decoration: none;
 		}

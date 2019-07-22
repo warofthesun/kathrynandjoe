@@ -368,5 +368,112 @@ function hide_editor() {
   }
 }
 
+// Add pallette colors to ACF color picker
+function my_acf_collor_pallete_script() {
+    ?>
+    <script type="text/javascript">
+    (function($){
+
+        acf.add_filter('color_picker_args', function( args, $field ){
+
+            // do something to args
+            args.palettes = ['#F9FCFA', '#AED2C1', '#7BAD96', '#39696B', '#2C3B41', '#C2D9AB']
+
+            console.log(args);
+            // return
+            return args;
+        });
+
+    })(jQuery);
+    </script>
+    <?php
+}
+
+add_action('acf/input/admin_footer', 'my_acf_collor_pallete_script');
+
+function my_acf_collor_pallete_css() {
+    ?>
+    <style>
+        .acf-color_picker .iris-picker.iris-border{
+            width: 200px !important;
+            height: 10px !important;
+        }
+        .acf-color_picker .wp-picker-input-wrap,
+        .acf-color_picker .iris-picker .iris-slider,
+        .acf-color_picker .iris-picker .iris-square{
+            display:none !important;
+        }
+    </style>
+    <?php
+}
+
+add_action('acf/input/admin_head', 'my_acf_collor_pallete_css');
+
+// Add custom styles to editor
+function wpb_mce_buttons_2($buttons) {
+    array_unshift($buttons, 'styleselect');
+    array_unshift( $buttons, 'fontsizeselect' );
+    return $buttons;
+}
+add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+
+/*
+* Callback function to filter the MCE settings
+*/
+
+function my_mce_before_init_insert_formats( $init_array ) {
+
+// Define the style_formats array
+
+    $style_formats = array(
+/*
+* Each array child is a format with it's own settings
+* Notice that each array has title, block, classes, and wrapper arguments
+* Title is the label which will be visible in Formats menu
+* Block defines whether it is a span, div, selector, or inline style
+* Classes allows you to define CSS classes
+* Wrapper whether or not to add a new block-level element around any selected elements
+*/
+        array(
+            'title' => 'Button',
+            'block' => 'span',
+            'classes' => 'primary-btn',
+            'wrapper' => true,
+
+        ),
+
+        array(
+            'title' => 'Drop Size',
+            'block' => 'span',
+            'classes' => 'drop-size',
+            'wrapper' => true,
+
+        ),
+
+        array(
+            'title' => 'Divider',
+            'block' => 'span',
+            'classes' => 'divider',
+            'wrapper' => true,
+
+        ),
+
+        array(
+            'title' => 'Remove Margin',
+            'block' => 'span',
+            'classes' => 'remove-margin',
+            'wrapper' => true,
+
+        ),
+
+    );
+    // Insert the array, JSON ENCODED, into 'style_formats'
+    $init_array['style_formats'] = json_encode( $style_formats );
+
+    return $init_array;
+
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

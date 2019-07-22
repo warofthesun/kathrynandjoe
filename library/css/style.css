@@ -1354,27 +1354,25 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.accent-btn, .comment-reply-link, #submit {
+.primary-btn a, .accent-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
   font-family: "Gravitas One", "Cursive", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
   font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
   font-weight: normal;
-  padding: 0 24px;
+  padding: .5em 1em;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
+  .primary-btn a:hover, .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn a:focus, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .accent-btn:active, .comment-reply-link:active, #submit:active {
+  .primary-btn a:active, .accent-btn:active, .comment-reply-link:active, #submit:active {
     top: 1px; }
 
 /*
@@ -1382,12 +1380,19 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
+.primary-btn a {
+  background-color: #7BAD96; }
+  .primary-btn a:hover, .primary-btn a:focus {
+    background-color: #a1cbb7; }
+  .primary-btn a:active {
+    background-color: #9ec9b4; }
+
 .accent-btn, .comment-reply-link, #submit {
-  background-color: #333; }
+  background-color: #AED2C1; }
   .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
-    background-color: #292929; }
+    background-color: #a1cbb7; }
   .accent-btn:active, .comment-reply-link:active, #submit:active {
-    background-color: #262626; }
+    background-color: #9ec9b4; }
 
 /******************************************************************
 Site Name:
@@ -1685,14 +1690,52 @@ BASE (MOBILE) SIZE
 /*********************
 GENERAL STYLES
 *********************/
+#container {
+  position: relative;
+  overflow: hidden; }
+
 body {
   font-family: "BioRhyme", "Georgia", Cambria, Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #F9FCFA;
+  background-color: #f5faf6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("../images/bridge-lower.png");
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position-x: center;
+  background-position-y: bottom;
+  position: relative;
+  z-index: 10; }
+
+.brush-one {
+  background-image: url("../images/brush-one.png");
+  position: absolute;
+  width: 100%;
+  z-index: 11;
+  height: 290px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  bottom: 10px; }
+
+.brush-two {
+  background-image: url("../images/brush-two.png");
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  bottom: -100px; }
+
+.bridge {
+  height: 300px;
+  width: 100%;
+  position: absolute; }
 
 img {
   image-rendering: auto; }
@@ -1733,6 +1776,66 @@ img {
   .section__title:after {
     left: 0.5em;
     margin-right: -50%; }
+
+.content-section {
+  position: relative; }
+  .content-section img {
+    width: 100%;
+    height: auto; }
+    .content-section img.full-width {
+      border-top: 0.5em solid #7BAD96;
+      border-bottom: 0.5em solid #7BAD96;
+      display: block; }
+  .content-section__body {
+    padding: 2em; }
+    .content-section__body.background-color {
+      color: #fff; }
+      .content-section__body.background-color h2, .content-section__body.background-color .h2 {
+        color: #fff; }
+      .content-section__body.background-color .divider:after {
+        content: "";
+        border-bottom: 2px solid #fff;
+        width: 20%;
+        display: block;
+        margin: 1em auto; }
+    .content-section__body .content {
+      margin: 0 auto; }
+      .content-section__body .content__single {
+        width: 60%; }
+      .content-section__body .content__double {
+        width: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+      .content-section__body .content__left, .content-section__body .content__right {
+        width: 49%; }
+      .content-section__body .content .drop-size {
+        font-size: .9em; }
+      .content-section__body .content ul {
+        list-style: circle;
+        margin: 1em 2em; }
+        .content-section__body .content ul li {
+          margin-bottom: 1em; }
+    .content-section__body h2, .content-section__body .h2 {
+      margin-bottom: 0; }
+    .content-section__body h3, .content-section__body .h3 {
+      margin-top: 0;
+      display: block; }
+      .content-section__body h3:after, .content-section__body .h3:after {
+        content: "";
+        border-bottom: 2px solid #AED2C1;
+        display: block;
+        width: 20%;
+        margin: 1em auto; }
+    .content-section__body h6,
+    .content-section__body .h6 {
+      margin-top: 0; }
+  .content-section .section-bottom-color {
+    width: 100%;
+    height: auto; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -1821,10 +1924,12 @@ h1, .h1 {
 h2, .h2 {
   font-size: 1.75em;
   line-height: 1.4em;
-  margin-bottom: 0.375em; }
+  margin-bottom: 0.375em;
+  color: #39696B; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  color: #39696B; }
 
 h4, .h4 {
   font-size: 1.1em;
@@ -1836,13 +1941,17 @@ h5, .h5 {
   text-transform: uppercase;
   letter-spacing: 2px; }
 
+h6,
+.h6 {
+  font-size: .9em; }
+
 /*********************
 HEADER STYLES
 *********************/
 .home .header {
   background-color: transparent; }
   .home .header__container {
-    height: 600px;
+    height: 80vh;
     position: relative;
     text-align: center;
     display: -webkit-box;
@@ -1866,12 +1975,12 @@ HEADER STYLES
       position: relative;
       width: 100%;
       height: 100%;
-      height: 600px; }
+      height: 80vh; }
       .home .header__container-double_image-left {
         width: 60%;
         position: absolute;
         z-index: 50;
-        height: 600px;
+        height: 80vh;
         -webkit-clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
                 clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
         background-position: center !important;
@@ -1880,7 +1989,7 @@ HEADER STYLES
         width: 50%;
         position: absolute;
         right: 0;
-        height: 600px;
+        height: 80vh;
         background-position: center !important;
         background-size: cover !important; }
     .home .header__container .header-content {
@@ -1937,12 +2046,11 @@ HEADER STYLES
         height: 100%;
         width: 100%;
         position: absolute;
-        background-image: url("../images/bridge-illo-2.png");
+        background-image: url("../images/bridge-illo.png");
         background-repeat: no-repeat;
         background-size: 280%;
         background-position-x: center;
-        background-position-y: 400px;
-        opacity: .7; }
+        background-position-y: 120%; }
 
 .header {
   background-color: #AED2C1; }
@@ -2029,14 +2137,15 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: 1.5em; }
+  margin-top: 1.5em;
+  position: relative;
+  z-index: 50; }
 
 article .hero--image img {
   width: 100%;
   height: auto; }
 
 .hentry {
-  background-color: #fff;
   border-radius: 3px;
   margin-bottom: 1.5em; }
   .hentry header {
@@ -2392,8 +2501,12 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #000;
-  color: #f8f9fa; }
+  background-color: #AED2C1;
+  color: #f8f9fa;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 80; }
 
 /*
 	if you checked out the link above:
@@ -2596,7 +2709,7 @@ DESKTOP
 *********************/
 @media only screen and (min-width: 75em) {
   .wrap {
-    width: 1040px; } }
+    width: 75em; } }
 
 /*********************
 LARGE VIEWING SIZE
@@ -2613,7 +2726,8 @@ on larger screens.
 
 ******************************************************************/
   .wrap {
-    width: 1440px; } }
+    width: 100%;
+    max-width: 1440px; } }
 
 /*********************
 PRINT STYLESHEET

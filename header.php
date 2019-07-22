@@ -46,6 +46,7 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	
 
 		<div id="container">
 			<?php if( is_front_page() ) : ?>

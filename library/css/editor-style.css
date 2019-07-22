@@ -343,7 +343,7 @@ BOX SIZING
   /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
   width: 731px;
-  font-family: "Gravitas One", "Cursive", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "BioRhyme", "Georgia", Cambria, Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -575,7 +575,8 @@ probably best not to use it. I mean, were you going to anyway? */
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
     text-rendering: optimizelegibility;
-    font-weight: 500; }
+    font-weight: 500;
+    font-family: "Gravitas One", "Cursive", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
       text-decoration: none; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
