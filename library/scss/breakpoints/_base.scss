@@ -149,6 +149,25 @@ img {
 					margin: 1em auto;
 				}
 			}
+
+			.divider-double {
+
+				&:before {
+					content: "";
+					border-top: 2px solid $white;
+					width: 20%;
+					display: block;
+					margin: 1em auto;
+				}
+
+				&:after {
+					content: "";
+					border-bottom: 2px solid $white;
+					width: 20%;
+					display: block;
+					margin: 1em auto;
+				}
+			}
 		}
 
 		.content {
@@ -162,6 +181,7 @@ img {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-between;
+				padding-top: 2em;
 			}
 
 			&__left,
