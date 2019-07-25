@@ -138,6 +138,204 @@ BOX SIZING
 /* @include box-sizing(border-box); */
 /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
+#container {
+  position: relative;
+  overflow: hidden; }
+
+.brush-one {
+  background-image: url("../images/brush-one.png");
+  position: absolute;
+  width: 100%;
+  z-index: 11;
+  height: 290px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  bottom: 10px; }
+
+.brush-two {
+  background-image: url("../images/brush-two-alt.png");
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  bottom: -100px; }
+
+.bridge {
+  height: 300px;
+  width: 100%;
+  position: absolute; }
+
+.section__title {
+  overflow: hidden;
+  text-align: center; }
+  .section__title:before, .section__title:after {
+    background-color: #7BAD96;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 10%;
+    border-radius: 6px; }
+  .section__title:before {
+    right: 0.5em;
+    margin-left: -50%; }
+  .section__title:after {
+    left: 0.5em;
+    margin-right: -50%;
+    border-bottom: 0px; }
+
+.content-section {
+  position: relative; }
+  .content-section img {
+    width: 100%;
+    height: auto; }
+    .content-section img.full-width {
+      display: block; }
+  .content-section__body {
+    padding: 2em;
+    padding-top: 0; }
+    .content-section__body.background-color {
+      color: #fff; }
+      .content-section__body.background-color h2, .content-section__body.background-color .h2 {
+        color: #fff; }
+      .content-section__body.background-color .divider:after {
+        content: "";
+        border-bottom: 2px solid #fff;
+        width: 20%;
+        display: block;
+        margin: 1em auto; }
+    .content-section__body .content {
+      margin: 0 auto; }
+      .content-section__body .content__single {
+        width: 60%; }
+      .content-section__body .content__double {
+        width: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+      .content-section__body .content__left, .content-section__body .content__right {
+        width: 49%; }
+      .content-section__body .content .drop-size {
+        font-size: .9em; }
+      .content-section__body .content ul {
+        list-style: circle;
+        margin: 1em 2em; }
+        .content-section__body .content ul li {
+          margin-bottom: 1em; }
+    .content-section__body h2, .content-section__body .h2 {
+      margin-bottom: 0; }
+    .content-section__body h3:after, .content-section__body .h3:after {
+      content: "";
+      border-bottom: 2px solid #AED2C1;
+      display: block;
+      width: 20%;
+      margin: 1em auto; }
+    .content-section__body h6,
+    .content-section__body .h6 {
+      margin-top: 0; }
+  .content-section .section-bottom-color {
+    width: 100%;
+    height: auto; }
+
+.home .header {
+  background-color: transparent; }
+  .home .header__container {
+    height: 80vh;
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%; }
+    .home .header__container-double_image {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      height: 80vh; }
+      .home .header__container-double_image-left {
+        display: block;
+        width: 60%;
+        position: absolute;
+        z-index: 50;
+        height: 80vh;
+        -webkit-clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
+                clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
+        background-position: center !important;
+        background-size: cover !important; }
+      .home .header__container-double_image-right {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        height: 80vh;
+        background-position: center !important;
+        background-size: cover !important; }
+    .home .header__container .header-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background-color: rgba(174, 210, 193, 0.7);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(174, 210, 193, 0.5)), to(rgba(174, 210, 193, 0.7)));
+      background-image: linear-gradient(to bottom, rgba(174, 210, 193, 0.5), rgba(174, 210, 193, 0.7));
+      width: 30%; }
+      .home .header__container .header-content .date,
+      .home .header__container .header-content .location {
+        color: #39696B;
+        position: relative;
+        z-index: 80; }
+      .home .header__container .header-content .date {
+        margin-top: -3em; }
+      .home .header__container .header-content .title {
+        color: #fff;
+        font-family: "Gravitas One", "Cursive", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 3em; }
+        .home .header__container .header-content .title p {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          line-height: 1;
+          margin: .5em; }
+          .home .header__container .header-content .title p .section__title:before, .home .header__container .header-content .title p .section__title:after {
+            background-color: #fff; }
+      .home .header__container .header-content .location {
+        font-size: 1.2em; }
+        .home .header__container .header-content .location span {
+          display: block;
+          font-size: .7em; }
+      .home .header__container .header-content .background-image {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-image: url("../images/bridge-illo.png");
+        background-repeat: no-repeat;
+        background-size: 280%;
+        background-position-x: center;
+        background-position-y: 120%; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -200,6 +398,9 @@ POSTS & CONTENT STYLES
 /*********************
 FOOTER STYLES
 *********************/
+.footer {
+  position: absolute; }
+
 /*
 check your menus here. do they look good?
 do they need tweaking?
@@ -208,6 +409,12 @@ do they need tweaking?
 /*********************
 GENERAL STYLES
 *********************/
+h1, .h1 {
+  font-size: 2.5em; }
+
+h2, .h2 {
+  font-size: 1.75em; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/

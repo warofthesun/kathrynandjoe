@@ -4,7 +4,6 @@ GENERAL STYLES
 
 #container {
 	position: relative;
-	overflow: hidden;
 }
 
 body {
@@ -15,44 +14,10 @@ body {
 	background-color: $primary-lt;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
-	background-image: url('../images/bridge-lower.png');
-	background-repeat: no-repeat;
-	background-size: 110%;
-	background-position-x: center;
-	background-position-y: bottom;
 	position: relative;
 	z-index: 10;
-}
-
-.brush-one {
-	background-image: url('../images/brush-one.png');
-	position: absolute;
-	width: 100%;
-	z-index: 11;
-	height: 290px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position-y: bottom;
-	bottom: 10px;
-}
-
-.brush-two {
-	background-image: url('../images/brush-two.png');
-	position: absolute;
-	width: 100%;
-	z-index: 9;
-	height: 500px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position-y: bottom;
-	bottom: -100px;
-}
-
-.bridge {
-	height: 300px;
-	width: 100%;
-	position: absolute;
-
+	background: url('../images/bridge-lower.png') center bottom no-repeat, url('../images/fog-bottom.png') center 100% no-repeat, url('../images/fog-top.png') center 50% no-repeat;
+	background-size: 110%, 100%, 100%;
 }
 
 img {
@@ -76,14 +41,60 @@ img {
 	}
 }
 
+.brush-one {
+	background-image: url('../images/brush-one.png');
+	position: absolute;
+	width: 100%;
+	z-index: 11;
+	height: 290px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	bottom: 10px;
+}
+
+.brush-two {
+	background-image: url('../images/brush-two-alt.png');
+	position: absolute;
+	width: 100%;
+	z-index: 9;
+	height: 500px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	bottom: 0;
+}
+
+.bridge {
+	height: 300px;
+	width: 100%;
+	position: absolute;
+}
+
 .section {
+	&__title {
+		text-align: center;
+		line-height: 1;
+		margin-bottom: 1em;
+		margin-top: 1em;
+
+		&:after {
+			content: "";
+			width: 80%;
+			display: inline-block;
+			border-bottom: 2px solid $primary;
+		}
+	}
+}
+
+.split-border {
 	&__title {
 		overflow: hidden;
 		text-align: center;
 
 		&:before,
 		&:after {
-			background-color: $primary-md;
+			background-color: $white;
 	    content: "";
 	    display: inline-block;
 	    height: 2px;
@@ -101,25 +112,25 @@ img {
 		&:after {
 			left: 0.5em;
     	margin-right: -50%;
+			border-bottom: 0px;
 		}
 	}
 }
 
 .content-section {
 	position: relative;
+	margin-bottom: 4em;
+
 	img {
 		width: 100%;
 		height: auto;
 
 		&.full-width {
-			border-top: .5em solid $primary-md;
-			border-bottom: .5em solid $primary-md;
 			display: block;
 		}
 	}
 
 	&__body {
-		padding: 2em;
 
 		&.background-color {
 			color: $white;
@@ -144,17 +155,18 @@ img {
 			margin: 0 auto;
 
 			&__single {
-				width: 60%;
+				width: 90%;
 			}
 			&__double {
-				width: 80%;
+				width: 90%;
 				display: flex;
+				flex-wrap: wrap;
 				justify-content: space-between;
 			}
 
 			&__left,
 			&__right {
-				width: 49%;
+				width: 100%;
 			}
 
 			.drop-size {
@@ -176,7 +188,7 @@ img {
 		}
 
 		h3, .h3 {
-			margin-top: 0;
+			margin-top: 1.5em;
 			display: block;
 
 			&:after {
@@ -246,7 +258,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -299,12 +311,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
+	font-size: 1.8em;
 	line-height: 1.333em;
 }
 
 h2, .h2 {
-	font-size: 1.75em;
+	font-size: 1.55em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
 	color: $primary-md-dk;
@@ -339,6 +351,7 @@ HEADER STYLES
 .home {
 	.header {
 		background-color: transparent;
+		position: relative;
 
 		&__container {
 			height: 80vh;
@@ -359,16 +372,10 @@ HEADER STYLES
 				height: 80vh;
 
 				&-left {
-					width: 60%;
-					position: absolute;
-					z-index: 50;
-					height: 80vh;
-					clip-path: polygon(0px 0, 95% 0, 0% 930%, 0 0%);
-					background-position: center !important;
-					background-size: cover !important;
+					display: none;
 				}
 				&-right {
-					width: 50%;
+					width: 100%;
 					position: absolute;
 					right: 0;
 					height: 80vh;
@@ -384,8 +391,8 @@ HEADER STYLES
 				border-left: 1em solid $primary;
 				border-right: 1em solid $primary;
 				height: 100%;
-				@include css-gradient(rgba($primary, 0.5),rgba($primary, 0.7));
-				width: 30%;
+				@include css-gradient(rgba($primary, 0.3),rgba($primary, 0.5));
+				width: 100%;
 				position: absolute;
 				top: 0;
 				z-index: 60;
@@ -471,14 +478,21 @@ and more scalable.
 */
 #mobile-nav {
 	text-align: center;
-	margin-bottom: 1em;
-	margin-top:-2em;
+	margin-bottom: 0;
+	margin-top:0;
 	transition: all .5s;
+	position: absolute;
+	z-index: 99;
+	top: 10px;
+	width: 100%;
+	color: $white;
 
 	&.show {
 		margin-top: 0em;
 		padding: .5em;
 		background-color: white;
+		color: $primary;
+		top: 0;
 
 		.fa-chevron-down {
 			transform: rotate(180deg);
@@ -486,7 +500,16 @@ and more scalable.
 	}
 }
 
-
+nav.show {
+	position: absolute;
+	top: 0;
+	margin-top: 2em;
+	padding-top: 1em;
+	z-index: 90;
+	background-color: $white;
+	width: 100%;
+	border-bottom: 1em solid $primary-md-dk;
+}
 
 .nav {
 	border-bottom: 0;
@@ -586,25 +609,7 @@ article {
 	}
 }
 
-		.hentry {
-			border-radius: 3px;
-			margin-bottom: 1.5em;
 
-			header {
-				border-bottom: 1px solid $light-gray;
-				padding: 1.5em;
-			}
-
-			footer {
-				padding: 1.5em;
-				border-top: 1px solid $light-gray;
-
-				p {
-					margin: 0;
-				}
-			}
-
-		} /* end .hentry */
 
 		.single-title,
 		.page-title,
@@ -1239,7 +1244,7 @@ FOOTER STYLES
 	clear: both;
 	background-color: $primary;
 	color: $light-gray;
-	position: absolute;
+	position: relative;
 	width: 100%;
 	bottom: 0;
 	z-index: 80;
