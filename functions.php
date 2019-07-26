@@ -20,7 +20,7 @@ function starter_ahoy() {
   load_theme_textdomain( 'kathrynandjoe', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-  require_once( 'library/custom-post-type.php' );
+  //require_once( 'library/custom-post-type.php' );
 
   // launching operation cleanup
   add_action( 'init', 'starter_head_cleanup' );
@@ -331,7 +331,7 @@ add_action( 'wp_enqueue_scripts', 'scrollmagic_scripts' );
  *
  */
 
-include 'inc/required-plugs.php';
+//include 'inc/required-plugs.php';
 
 // 1. customize ACF path
 add_filter('acf/settings/path', 'my_acf_settings_path');
