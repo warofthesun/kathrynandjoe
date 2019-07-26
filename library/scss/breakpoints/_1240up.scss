@@ -9,7 +9,8 @@ on larger screens.
 
 ******************************************************************/
 
-.wrap {
+.wrap,
+.constrain {
   width: 100%;
   max-width: 1440px;
 }

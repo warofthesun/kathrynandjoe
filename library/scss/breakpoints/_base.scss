@@ -16,8 +16,8 @@ body {
   	-moz-osx-font-smoothing: grayscale;
 	position: relative;
 	z-index: 10;
-	background: url('../images/bridge-lower.png') center bottom no-repeat, url('../images/fog-bottom.png') center 100% no-repeat, url('../images/fog-top.png') center 50% no-repeat;
-	background-size: 110%, 100%, 100%;
+	background: url('../images/fog-bottom.png') center 100% no-repeat, url('../images/fog-top.png') center 50% no-repeat;
+	background-size: 100%, 100%;
 }
 
 img {
@@ -29,6 +29,7 @@ img {
 }
 
 #inner-footer {
+	align-items: center;
 	.nav {
 		opacity: 1;
 		flex-direction: row;
@@ -181,7 +182,6 @@ img {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-between;
-				padding-top: 2em;
 			}
 
 			&__left,
@@ -408,10 +408,8 @@ HEADER STYLES
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				border-left: 1em solid $primary;
-				border-right: 1em solid $primary;
 				height: 100%;
-				@include css-gradient(rgba($primary, 0.3),rgba($primary, 0.5));
+				background-color: rgba(12,29,21,0.35);
 				width: 100%;
 				position: absolute;
 				top: 0;
@@ -420,19 +418,16 @@ HEADER STYLES
 
 				.date,
 				.location {
-					color: $primary-md-dk;
+					color: $white;
 					position: relative;
 					z-index: 80;
-				}
-
-				.date {
-					margin-top: -3em;
+					font-size: 1.5em;
 				}
 
 				.title {
 					color: $white;
 					font-family: $sans-serif;
-					font-size: 3em;
+					font-size: 2.5em;
 					p {
 						display: flex;
 						flex-direction: column;
@@ -462,9 +457,9 @@ HEADER STYLES
 					position: absolute;
 					background-image: url('../images/bridge-illo.png');
 					background-repeat: no-repeat;
-					background-size: 280%;
+					background-size: 130%;
 					background-position-x: center;
-					background-position-y: 120%;
+					background-position-y: 105%;
 				}
 			}
 		}
@@ -506,6 +501,7 @@ and more scalable.
 	top: 10px;
 	width: 100%;
 	color: $white;
+	font-size: 1.3em;
 
 	&.show {
 		margin-top: 0em;
@@ -513,6 +509,7 @@ and more scalable.
 		background-color: white;
 		color: $primary;
 		top: 0;
+		font-size: 1em;
 
 		.fa-chevron-down {
 			transform: rotate(180deg);

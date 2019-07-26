@@ -46,13 +46,11 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-	
-
 		<div id="container">
 			<?php if( is_front_page() ) : ?>
 				<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-							<div id="inner-header" class="wrap row">
+							<div id="inner-header" class="constrain">
 								<div class="header__container">
 								<?php
 									$image = get_field('full_width_image');
