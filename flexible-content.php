@@ -11,7 +11,7 @@ if( have_rows('content_sections') ):
         $section_title = sanitize_title_for_query(get_sub_field('section_title') );
         $subtitle = sanitize_title_for_query(get_sub_field('subtitle') );
         ?>
-
+        <a name="<?php if(get_sub_field('section_title') ) : echo esc_attr( $section_title ); elseif(get_sub_field('subtitle') ) : echo esc_attr( $subtitle ); else : ?>post-<?php the_ID(); ?><?php endif; ?>"></a>
         <article id="<?php if(get_sub_field('section_title') ) : echo esc_attr( $section_title ); elseif(get_sub_field('subtitle') ) : echo esc_attr( $subtitle ); else : ?>post-<?php the_ID(); ?><?php endif; ?>" <?php post_class( 'content-section' ); ?> role="article">
           <?php if(get_sub_field('section_title') ) : ?>
             <h1 class="section__title"><?php the_sub_field('section_title'); ?></h1>

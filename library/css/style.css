@@ -1985,6 +1985,10 @@ HEADER STYLES
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%; }
+    .home .header__container-single_image {
+      background-position: center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat; }
     .home .header__container-double_image {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -2771,7 +2775,7 @@ DESKTOP
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: bottom;
-    bottom: -100px; }
+    bottom: 0px; }
   .bridge {
     height: 300px;
     width: 100%;

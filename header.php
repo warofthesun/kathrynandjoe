@@ -52,20 +52,21 @@
 
 							<div id="inner-header" class="constrain">
 								<div class="header__container">
-								<?php
-									$image = get_field('full_width_image');
-
-									if( !empty($image) ):
-										// vars
-										$url = $image['url'];
-										$title = $image['title'];
-										$alt = $image['alt'];
-
-										// thumbnail
-										$size = 'header-image';
-										$thumb = $image['sizes'][ $size ]; ?>
 								<?php if(get_field('number_of_images') == 'single' ) : ?>
+									<?php
+										$image = get_field('full_width_image');
+
+										if( !empty($image) ):
+											// vars
+											$url = $image['url'];
+											$title = $image['title'];
+											$alt = $image['alt'];
+
+											// thumbnail
+											$size = 'header-image';
+											$thumb = $image['sizes'][ $size ]; ?>
 									<div class="header__container header__container-single_image" style="background: url('<?php echo $thumb; ?>');"></div>
+								<?php endif; ?>
 								<?php else : ?>
 									<div class="header__container header__container-double_image">
 										<?php
@@ -97,7 +98,7 @@
 									 <div class="header__container-double_image-right"style="background: url('<?php echo $thumb; ?>');"></div>
 								 <?php endif; ?>
 		 						 </div>
-								<?php endif; endif; ?>
+								<?php  endif; ?>
 								<div class="header-content">
 									<div class="background-image"></div>
 									<div class="date"><?php the_field('date'); ?></div>

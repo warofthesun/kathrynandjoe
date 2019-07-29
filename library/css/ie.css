@@ -376,7 +376,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: bottom;
-  bottom: -100px; }
+  bottom: 0px; }
 
 .bridge {
   height: 300px;

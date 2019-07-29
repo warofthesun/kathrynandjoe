@@ -381,7 +381,11 @@ HEADER STYLES
 			justify-content: center;
 			width: 100%;
 
-			&-single_image {}
+			&-single_image {
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat;
+			}
 			&-double_image {
 				display: flex;
 				justify-content: flex-start;
