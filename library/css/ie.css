@@ -250,7 +250,7 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */ }
   .nav ul {
-    background: #000;
+    background: rgba(255, 255, 255, 0.8);
     margin-top: 0; }
   .nav li {
     /*
@@ -269,11 +269,12 @@ NAVIGATION STYLES
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
-      border: 1px solid #ccc;
+      margin-left: -4%;
       border-top: 0;
       position: absolute;
       visibility: hidden;
       z-index: 8999;
+      bottom: 1em;
       /* highlight sub-menu current page */ }
       .nav li ul.sub-menu li,
       .nav li ul.children li {
@@ -287,7 +288,6 @@ NAVIGATION STYLES
           padding-left: 10px;
           border-right: 0;
           display: block;
-          width: 180px;
           border-bottom: 1px solid #ccc; }
         .nav li ul.sub-menu li:last-child a,
         .nav li ul.children li:last-child a {

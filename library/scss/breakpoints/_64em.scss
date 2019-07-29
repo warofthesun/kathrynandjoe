@@ -39,7 +39,7 @@ NAVIGATION STYLES
 
 
 	ul {
-		background:$black;
+		background:rgba($white, 0.8);
 		margin-top:0;
 	}
 	li {
@@ -69,11 +69,13 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
+			margin-left: -4%;
+			//border: 1px solid #ccc;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
 			z-index: 8999;
+			bottom: 1em;
 
 			li {
 
@@ -81,7 +83,7 @@ NAVIGATION STYLES
 					padding-left: 10px;
 					border-right: 0;
 					display: block;
-					width: 180px;
+					//width: 180px;
 					border-bottom: 1px solid #ccc;
 
 					&:hover,

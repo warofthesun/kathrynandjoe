@@ -2,6 +2,10 @@
 GENERAL STYLES
 *********************/
 
+html {
+  scroll-behavior: smooth;
+}
+
 #container {
 	position: relative;
 }
