@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "^2.26.3",
-    "gulp": "^3.9.1"
+    "gulp": "^4.0.2"
   },
   "devDependencies": {
     "gulp-autoprefixer": "^4.1.0",
